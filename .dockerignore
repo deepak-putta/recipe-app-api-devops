@@ -1,5 +1,5 @@
 # docker-compose is used for local deployment, we do not need for building docker image
-docker-compose.yml   
+#docker-compose.yml   
 README.md
 .git/
 .gitignore
