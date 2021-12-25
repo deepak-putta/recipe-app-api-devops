@@ -25,7 +25,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'changeme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+## comes as string, so string is 0,then eval as true
+## first convert to int, bool(int) 1 becomes True, 0 becomes False, we can control this way
+## cannot have type in environ, we can only have string
 
+
+##filter fn for creating empty list, stop empty string creation
 ALLOWED_HOSTS = []
 ALLOWED_HOSTS.extend(
     filter(
