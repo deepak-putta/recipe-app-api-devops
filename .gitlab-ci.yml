@@ -1,6 +1,6 @@
 stages:
   - Test and Lint   # run on unit test 
-  - Build and Push  # build docker images and push ECR
+  - Build and Push  # build docker images and push AWS ECR
   - Staging Plan
   - Staging Apply
   - Production Plan
