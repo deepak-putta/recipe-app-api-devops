@@ -36,7 +36,6 @@ resource "aws_cloudwatch_log_group" "ecs_task_logs" {
   tags = local.common_tags
 }
 
-# ... existing code ...
 
 data "template_file" "api_container_definitions" {
   template = file("templates/ecs/container-definitions.json.tpl")
@@ -109,6 +108,7 @@ resource "aws_ecs_service" "api" {
   task_definition = aws_ecs_task_definition.api.family
   desired_count   = 1
   launch_type     = "FARGATE"
+  platform_version = "1.4.0"
 
   network_configuration {
     subnets = [
