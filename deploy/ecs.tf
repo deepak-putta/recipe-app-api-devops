@@ -38,7 +38,7 @@ resource "aws_cloudwatch_log_group" "ecs_task_logs" {
 
 
 data "template_file" "api_container_definitions" {
-  template = file("templates/ecs/container-definitions.json.tpl")
+  template = file("./templates/ecs/container-definitions.json.tpl")
 
   vars = {
     app_image         = var.ecr_image_api
